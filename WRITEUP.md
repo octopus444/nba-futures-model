@@ -134,6 +134,49 @@ around 0.002 in log loss with standard errors of the same size. The noise floor 
 this sample is around 0.002, measured from the stages where the prior is known to do
 nothing. Neither was adopted.
 
+## Pricing a season that has not started
+
+The 2026-27 season has not begun, so the only input is the prior: last season's
+ratings pulled toward the league mean. Run on opening night, the model gives:
+
+| team | title | make playoffs | mean wins | sd wins |
+|---|---|---|---|---|
+| OKC | 13.4% | 92.1% | 53.2 | 9.0 |
+| SAS | 10.1% | 87.9% | 51.2 | 9.4 |
+| DET | 8.7% | 83.4% | 49.2 | 9.5 |
+| BOS | 8.0% | 84.9% | 49.4 | 9.6 |
+| HOU | 5.8% | 78.1% | 47.0 | 9.6 |
+| NYK | 5.8% | 76.8% | 46.5 | 9.7 |
+| DEN | 5.6% | 76.4% | 46.5 | 9.7 |
+| CLE | 4.9% | 74.3% | 45.5 | 9.6 |
+| CHA | 4.8% | 72.1% | 44.9 | 9.9 |
+| TOR | 3.6% | 65.4% | 42.9 | 9.6 |
+
+The market has Oklahoma City and San Antonio as co-favourites, quoted around +250
+to +275 at the books and 21.5 and 20.5 percent on Polymarket, where there is no
+overround to strip out. So the top of the model agrees with the top of the market
+on nothing but last season.
+
+The disagreements below that are more interesting, because each one names
+something the model cannot see. Detroit won 60 games last year and the model has
+them third; the market has them in a group at 25-1. Philadelphia is absent from
+the model's top ten and fourth in the market, having signed LeBron James and
+traded for Jaylen Brown over the summer. Boston is fourth in the model and far
+lower in the market, being the team that gave Brown up. One transaction, two
+teams, and the model is wrong in both directions.
+
+The model is also flatter than the market: 13.4 percent on the favourite against
+about 21. On a date where the only evidence is a season that ended in June, being
+less certain than a market that knows the rosters is the right side to be wrong
+on. The size of that gap is a fair measure of what roster information is worth,
+and it is the strongest argument for the first two items under where this goes
+next.
+
+Two caveats. The schedule carries 80 of the 82 games per team, because the
+fixtures replacing NBA Cup knockout games are not published yet, so win totals run
+about two light. And home advantage cannot be estimated with nothing played, so a
+league-level value stands in until games arrive.
+
 ## Assumptions
 
 The model has no information about who is on the floor. It learns that a star is hurt
